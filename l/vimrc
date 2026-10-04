@@ -1,0 +1,72 @@
+set guioptions-=m
+set guioptions-=T
+
+set colorcolumn=80
+
+set nu
+if $TABSTOP==''
+	let TABSTOP=4
+else
+	let TABSTOP=$TABSTOP
+endif
+let &softtabstop=TABSTOP
+let &tabstop=TABSTOP
+let &shiftwidth=TABSTOP
+set nobackup
+set mouse=a
+set hlsearch
+set ruler
+set expandtab
+
+map <F2> : call Save() <CR>
+map <F5> : !gdb --quiet %< <CR>
+map <F7> : call Compile() <CR>
+map <F8> : !bash check.sh <CR>
+map <F10> : !./%< <.in <CR>
+map <F9> : call Run() <CR>
+
+syn keyword Type dint
+syn keyword Special PROC
+syn keyword Special lld
+filetype plugin indent on
+syntax enable
+
+colors koehler
+
+"set makeprg=g++\ %\ -o\ %<\ -g\ -Wall\ -Wextra\ -DLAEKOV_LOCAL
+
+func Compile()
+	exec "w"
+	if &filetype=='cpp'
+		exec "!g++ % -o %< -g -Wall -Wextra -DLAEKOV_LOCAL && size %<"
+	elseif &filetype=='c'
+		exec "!gcc % -o %< -g"
+	elseif &filetype=='pascal'
+		exec "!fpc % -g"
+	elseif &filetype=='sh'
+		exec "!chmod +x %"
+	elseif &filetype=='java'
+		exec "!javac %"
+	elseif &filetype=='tex'
+		exec "!xelatex %"
+	endif
+endfunc
+
+func Run()
+	if &filetype=='python'
+		exec "!python %"
+	elseif &filetype=='sh'
+		exec "!bash ./%"
+	elseif &filetype=='java'
+		exec "!java Main"
+	elseif &filetype=='html'
+		exec "!open ./%"
+	elseif &filetype=='tex'
+		exec "!open %<.pdf"
+	elseif &filetype=='javascript'
+		exec "!node %"
+	else
+		exec "!./%<"
+	endif
+endfunc
+

@@ -1,0 +1,114 @@
+<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'/>
+<style>
+p {
+	font-size: 44pt;
+}
+	button {
+		font-size: 24pt;
+	}
+</style>
+<p id='text'></p>
+<button onclick='update(1)'>Get1(<span id='cnt1'>0</span>)</button>
+<button onclick='update(2)'>Get2(<span id='cnt2'>0</span>)</button>
+<br/>
+<button onclick='update(0)'>Even</button>
+<button onclick='auto()'>Auto</button>
+
+<script>
+var a = [];
+var answer = '';
+
+var autosolve = function(a) {
+	var chs = '+-*/';
+	var gg = a.join(',') + ' No solution';
+	for (var i = 0; i < 24; ++ i) {
+		a = nextPerm(a);
+		for (var oa = 0; oa < 4; ++ oa) {
+			for (var ob = 0; ob < 4; ++ ob) {
+				for (var oc = 0; oc < 4; ++ oc) {
+					var eqs = a[0] + chs.charAt(oa) + a[1] + chs.charAt(ob) + a[2] + chs.charAt(oc) + a[3];
+					//console.log(eqs + '=' + eval(eqs));
+					if (eval(eqs) === 24) {
+						return eqs;
+					}
+					eqs =  '(' + a[0] + chs.charAt(oa) + a[1] + ')' + chs.charAt(ob) + a[2] + chs.charAt(oc) + a[3];
+					//console.log(eqs + '=' + eval(eqs));
+					if (eval(eqs) === 24) {
+						return eqs;
+					}
+					eqs =  '(' + a[0] + chs.charAt(oa) + a[1] + ')' + chs.charAt(ob) + '(' + a[2] + chs.charAt(oc) + a[3] + ')';
+					//console.log(eqs + '=' + eval(eqs));
+					if (eval(eqs) === 24) {
+						return eqs;
+					}
+					eqs =  a[0] + chs.charAt(oa) + '(' + a[1] + chs.charAt(ob) + a[2] + ')' + chs.charAt(oc) + a[3];
+					//console.log(eqs + '=' + eval(eqs));
+					if (eval(eqs) === 24) {
+						return eqs;
+					}
+					eqs =  a[0] + chs.charAt(oa) + '(' + a[1] + chs.charAt(ob)  + a[2] + chs.charAt(oc) + a[3] + ')';
+					//console.log(eqs + '=' + eval(eqs));
+					if (eval(eqs) === 24) {
+						return eqs;
+					}
+				}
+			}
+		}
+	}
+	return gg;
+};
+
+var update = function(x) {
+	if (x !== 0) {
+		var t = document.getElementById('cnt' + x).innerHTML;
+		t = parseInt(t) + 1;
+		document.getElementById('cnt' + x).innerHTML = t;
+	}
+	do {
+		a = [];
+		for (var i = 0; i < 4; ++ i) {
+			a.push(Math.floor(Math.random() * 9) + 1);
+		}
+		answer = autosolve(a);
+	} while (answer.match('No solution'));
+	//a = [1, 4, 5, 6];
+	document.getElementById('text').innerHTML = a.join(',');
+};
+
+var nextPerm = function(a) {
+	var i = 3;
+	for (; i > 0; -- i) {
+		if (a[i] >= a[i - 1]) {
+			break;
+		}
+	}
+	if (i === 0) {
+		return a.reverse();
+	}
+	var c = a[i];
+	a[i] = a[i - 1];
+	a[i - 1] = c;
+	var b = a.slice(i);
+	b.sort();
+	return a.slice(0, i).concat(b);
+};
+
+var auto = function() {
+	document.getElementById('text').innerHTML = answer;
+};
+
+var init = function() {
+	var req = document.URL.match(/\?\d{4}/);
+	if (req) {
+		for (var i = 0; i < 4; ++i) {
+			a.push(parseInt(req[0][i + 1]));
+		}
+		answer = autosolve(a);
+		auto();
+	} else {
+		update(0);
+	}
+};
+
+init();
+</script>
