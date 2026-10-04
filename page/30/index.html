@@ -148,6 +148,42 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>BZOJ3319 黑白树
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>异常欢乐的并查集。馒头染色法。均摊O(n)的时间。
+离线，先把每个染色操作会染黑哪些边算出来，把黑色子节点并到白色父节点里。
+然后倒着处理，询问就直接用并查集问白色子节点顶上的黑色父节点最近是谁。染色操作再染回来。
+#include &lt;cstdio&gt;
+#include &lt;cctype&gt;
+#include &lt;cstring&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+struct edge {
+int t, i;
+edge *next;
+};
+struct query {
+int t, v, ans;
+int *b;
+};
+int _d_;
+#define readInt(_x_) { \
+int&amp; _s_ = _x_; \
+_s_ = 0; \
+while (!isdigit(_d_ = getchar())); \
+while ((_s_ = _s_ * 10 &#43; _d_ - 48), isdigit(_d_ = getchar())); \
+}
+const int maxn = 1000009;
+int n, m, d[maxn], fa[maxn], v[maxn], c[maxn], r[maxn];...</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-11-28 09:46:11 +0000 UTC'>November 28, 2014</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to BZOJ3319 黑白树" href="/oi/lofterimport_062/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>BZOJ1954 Pku3764 The xor-longest Path
     </h2>
   </header>
@@ -446,37 +482,6 @@ return a....</p>
   </div>
   <footer class="entry-footer"><span title='2014-11-24 08:43:28 +0000 UTC'>November 24, 2014</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to BZOJ2716 [Violet 3]天使玩偶" href="/oi/lofterimport_073/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>BZOJ2506 calc
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>看到取模瞬间想到了昨天的bc。
-应该这是取模然后求啥玩意的时候的比较通用的解法吧。p&lt;=sqrt(maxv)的预处理，剩下的直接暴力。结果预处理又写丑了一回。
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int maxn = 100009;
-const int maxv = 10000;
-const int bsz = 100;
-const int maxb = 103;
-int n, m;
-int a[maxn], vb[maxb][maxb], ve[maxb][maxb];
-int xb[maxn], xe[maxn];
-int i_buf[maxn * maxb * 2], tib;
-void pre() {
-memset(ve, 0, sizeof(ve));
-memset(xe, 0, sizeof(xe));
-for (int i = 1; i &lt;= n; &#43;&#43; i)
-&#43;&#43; xe[a[i]];
-for (int i = 0; i &lt;= maxv; &#43;&#43; i) {...</p>
-  </div>
-  <footer class="entry-footer"><span title='2014-11-23 17:32:59 +0000 UTC'>November 23, 2014</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to BZOJ2506 calc" href="/oi/lofterimport_074/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

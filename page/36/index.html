@@ -148,6 +148,48 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>BZOJ3672 [NOI2014]购票
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>考场上只想到暴力。
+如果只是一条链的话怎么乱搞一搞？
+如果没有深度限制的话简单的斜率优化&#43;链剖就行了。
+有深度限制就把hull扔到线段树里用可持久化栈来维护一下。DFS的时候塞进线段树里，然后完了再扔出来。总的复杂度O(n*log^2(n))，
+代码也不怎么复杂。
+#include &lt;cstdio&gt;
+#include &lt;cctype&gt;
+#include &lt;memory.h&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+struct edge {
+int t;
+edge* next;
+};
+typedef long long qw;
+typedef long double exf;
+#ifdef WIN32
+#define lld &#34;%I64d&#34;
+#else
+#define lld &#34;%lld&#34;
+#endif
+#define _l (qw)
+#define readInt(_s_) {\
+int _d_;\
+_s_ = 0;\
+while (!isdigit(_d_ = getchar()));\
+while ((_s_ = _s_ * 10 &#43; _d_ - 48), isdigit(_d_ = getchar()));\
+}
+struct oper {
+int p, v, t;...</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-10-14 18:01:23 +0000 UTC'>October 14, 2014</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to BZOJ3672 [NOI2014]购票" href="/oi/lofterimport_150/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>20141014 计划
     </h2>
   </header>

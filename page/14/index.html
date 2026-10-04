@@ -148,6 +148,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>bzoj3451 tyvj1953 Normal
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>mhy大爷多久之前开的坑啊ovo
+这题的思路比较神.点分&#43;fft.两个点会产生的贡献是1/(dist &#43; 1).于是要知道长度为多少的链有多少条.
+利用树分可以将∑深度降到O(n*log n)的级别.原因很明显啊.
+然后就用fft来求就好喽.反正是double也懒得用数论了.然后找了wyf的程序随便就拍出一组末位不等,也没用long double.居然能过太神奇了.
+总复杂度O(n*log2n).然后莫名其妙就拿了rank1好开心啊.</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-06-17 20:55:30 +0000 UTC'>June 17, 2015</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to bzoj3451 tyvj1953 Normal" href="/oi/dbimport_194/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>bzoj3265 志愿者招募加强版
     </h2>
   </header>
@@ -308,21 +324,6 @@ gcd序列可以用插分序列&#43;第一个数来支持区间加.二维那就�
   </div>
   <footer class="entry-footer"><span title='2015-05-28 19:39:13 +0000 UTC'>May 28, 2015</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to bzoj2877 [Noi2012]魔幻棋盘" href="/oi/dbimport_167/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>bzoj3864 Hero meet devil
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>立杰的dp套dp.之前在hwadee培训的时候讲过的题啊.
-考虑求lcs时候的f数组的一列,发现相邻两个数要么差1要么不差.于是15就是拿来状压这个东西的.
-然后很愉快地写了一个然后很愉快地tle了.妈妈,剧本里没这一节啊.
-仔细思考了一下发现每次在计数dp转移的时候去找lcs dp非常慢.而且只要给定状态和转移,目标是确定的.跑1000次浪费了.于是改成预处理转移.就好了.</p>
-  </div>
-  <footer class="entry-footer"><span title='2015-05-24 10:01:57 +0000 UTC'>May 24, 2015</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to bzoj3864 Hero meet devil" href="/oi/dbimport_210/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

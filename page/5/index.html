@@ -148,6 +148,27 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>时隔六年, 我怎么又在修 fcitx 了
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在宿舍买了一台新显示器, 2k.
+发现 3337u 和 6400m 都不支持 2k 输出, 于是愉快地买了个 windows 游戏本当前端用.
+因为有 rtx 2060 而且想打游戏, 所以只能用 windows 了, 最近又很不喜欢双系统 (因为要重启很麻烦)
+于是找到了解决方案: 在 3337u 上开个 vnc server, 在 windows 里连过去.
+虽然内网是千兆但是破笔记本迷之降速到了百兆, 于是网络也并不快. 要命的是 super 键会被 windows 吃掉从而无法使用 kde 里面炫酷的窗口搬移特技.
+想起了陈年老相好 dwm. 于是又在这台 ideapad 上用上了 dwm, 并愉快地自己修改代码配置了 colorscheme 和各种神奇的热键.
+然后用得好好的 fcitx 就跪了. ctrl &#43; 空格打死也加载不出来输入法.
+尝试了各种重启重装 fcitx-configure 和删配置文件, 都没用. 一脸茫然.
+各种搜索尝试之后发现管用的是在 vnc 的 xstartup 里面加上
+export GTK_IM_MODULE=&#34;fcitx&#34; export QT_IM_MODULE=&#34;fcitx&#34; export XMODIFIERS=&#34;@im=fcitx&#34; 然后就能解决问题了....</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-11-18 22:54:10 +0000 UTC'>November 18, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to 时隔六年, 我怎么又在修 fcitx 了" href="/technical/0fbb2f/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Pipedream 
     </h2>
   </header>
@@ -302,22 +323,6 @@ hello world =&gt; aGVsbG8gd29ybGQ=
   </div>
   <footer class="entry-footer"><span title='2020-02-07 10:58:21 +0000 UTC'>February 7, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to 针对训诫事件的死亡凝视" href="/random/ce69e9/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Ubuntu 发行版更新记录
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>就在刚刚运行着本网站的阿里云 ecs 经历了一次升级, 从 ubuntu 16.04 lts 升级到了 18.04 lts.
-升级过程平稳, 但升级后发现这个 php 做的网站变成了源码. 目测是 php 跪了, 于是尝试修 php.
-php5 仿佛已经不被支持, 于是换用 php7. 直接暴力 apt remove 再 install 就可以了, 配置会被保留.
-然后发现 mysqli not found. 解决方法是在 /etc/php/7.2/apache2/php.ini 里面将 extension=mysqli 一行给 uncomment 掉.
-然后就完事了.</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-01-21 23:13:52 +0000 UTC'>January 21, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to Ubuntu 发行版更新记录" href="/technical/3132d1/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

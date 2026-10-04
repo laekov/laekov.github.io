@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; laekov</copyright>
-    <lastBuildDate>Fri, 12 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/serving/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="/tags/serving/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Goodbye, laekov.com.cn</title>
+      <link>/technical/domain-change/</link>
+      <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
+      
+      <guid>/technical/domain-change/</guid>
+      <description>laekov has made the decision to get rid of the .cn suffix.
+在自己网页上使用 laekov.com.cn 的朋友请 kindly 更新链接. 谢谢.</description>
+    </item>
+    
     <item>
       <title>LLM Serving 文章阅读笔记</title>
       <link>/technical/llm-serving-papers/</link>

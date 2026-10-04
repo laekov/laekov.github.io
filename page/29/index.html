@@ -148,6 +148,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>80MSWC diary 3.5
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>昨天是day3明天是day4所以今天是day3.5。
+讲了一天课。
+上午&#43;晚上是图论。感觉图论的东西比较神。好像基本都是cf原题吧。好多东西要和其它的诸如数据结构和dp之类的东西结合，还有数学也比较重要。
+下午是fft相关。先讲了一下fft的原理，虽然我觉得讲得除了好玩以外没什么特点，也没有用最好理解的方式来讲。然后期待的例题好像也不杂。然后怎么就扯到牛顿迭代上去了。不过这玩意以前没用过感觉还挺神奇的，改天找道题试试。
+晚上无聊的时候写了个后缀数组，这种东西还是要不时写写不然都要忘了。然后后缀自动机的构建依然不太能理解。看来我还是太弱了WUW
+然后明天是最后一天了。我虽然年轻，但是还是要努力一点的。</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-12-16 21:30:46 +0000 UTC'>December 16, 2014</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to 80MSWC diary 3.5" href="/oi/lofterimport_038/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>BZOJ1692 [Usaco2007 Dec]队列变换
     </h2>
   </header>
@@ -419,42 +436,6 @@ for (a %= mod; x; x &gt;&gt;= 1, a = _l a * a % mod)...</p>
   </div>
   <footer class="entry-footer"><span title='2014-11-29 17:04:43 +0000 UTC'>November 29, 2014</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to BZOJ1951 [Sdoi2010]古代猪文" href="/oi/lofterimport_061/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>BZOJ3319 黑白树
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>异常欢乐的并查集。馒头染色法。均摊O(n)的时间。
-离线，先把每个染色操作会染黑哪些边算出来，把黑色子节点并到白色父节点里。
-然后倒着处理，询问就直接用并查集问白色子节点顶上的黑色父节点最近是谁。染色操作再染回来。
-#include &lt;cstdio&gt;
-#include &lt;cctype&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-struct edge {
-int t, i;
-edge *next;
-};
-struct query {
-int t, v, ans;
-int *b;
-};
-int _d_;
-#define readInt(_x_) { \
-int&amp; _s_ = _x_; \
-_s_ = 0; \
-while (!isdigit(_d_ = getchar())); \
-while ((_s_ = _s_ * 10 &#43; _d_ - 48), isdigit(_d_ = getchar())); \
-}
-const int maxn = 1000009;
-int n, m, d[maxn], fa[maxn], v[maxn], c[maxn], r[maxn];...</p>
-  </div>
-  <footer class="entry-footer"><span title='2014-11-28 09:46:11 +0000 UTC'>November 28, 2014</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to BZOJ3319 黑白树" href="/oi/lofterimport_062/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

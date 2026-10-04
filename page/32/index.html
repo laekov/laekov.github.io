@@ -148,6 +148,43 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>BZOJ3123 [Sdoi2013]森林
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>数据结构题神马的最开心了。
+乍一看动态树，其实不然。复杂度可以再乘一个log的。
+启发式合并。然后合并的时候直接暴力重构整棵子树，建主席树只和父亲节点有关，所以还是能搞定。
+写了一个机智的垃圾回收把log^2的空间变成了log。然后发现空间有512MB。
+#include &lt;cstdio&gt;
+#include &lt;cctype&gt;
+#include &lt;cstring&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+struct edge {
+int t;
+edge* next;
+};
+struct seg {
+int v, c;
+seg *ls, *rs;
+};
+#define readInt(_s_) {\
+int _d_;\
+_s_ = 0;\
+while (!isdigit(_d_ = getchar()));\
+while ((_s_ = _s_ * 10 &#43; _d_ - 48), isdigit(_d_ = getchar()));\
+}
+const int maxn = 80009;
+const int maxl = 33;
+const int maxnd = maxn * maxl;...</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-11-20 15:49:34 +0000 UTC'>November 20, 2014</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to BZOJ3123 [Sdoi2013]森林" href="/oi/lofterimport_085/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>11月下旬计划
     </h2>
   </header>
@@ -416,29 +453,6 @@ intmain() {
   </div>
   <footer class="entry-footer"><span title='2014-11-13 13:34:28 +0000 UTC'>November 13, 2014</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to BZOJ2141 排队" href="/oi/lofterimport_097/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>NOIP2014 DIARY2
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>居然感冒了，嗓子痛死了。
-8:00 进考场了，不准动机器，那还怎么配vim啊TT
-8:30 这密码。看了下题好像也不是特别麻烦啊，除了最后一题有个10^10000。
-8:35 第一题敲完了？
-8:45 第二题敲完了？
-8:50 第三题想不出其它的做法啊。哈希吧。
-9:10 花了四十分钟就做完了？点开扫雷的时候看到了身旁某兄怨念的眼神。
-10:00 第三题极限数据居然会tle。想打数据分治但是觉得不好的。发现可以先用自然溢出，如果没有暴再用模质数检查。这样好像0.5s能跑完。希望评测机不要比这个机子慢太多。
-11:00 第一题居然把&#43;&#43; x写scanf上面了，作死。
-12:00 终于交卷了。又老了一岁的感觉。
-12:15 照相，讨论。jason_yu好像第三题写得不太一样，其他人基本都想得一样。看谁长得帅了。
-然后某人的第六次noip就结束了。</p>
-  </div>
-  <footer class="entry-footer"><span title='2014-11-09 13:08:09 +0000 UTC'>November 9, 2014</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to NOIP2014 DIARY2" href="/oi/lofterimport_099/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

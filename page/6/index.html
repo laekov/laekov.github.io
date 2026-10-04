@@ -148,6 +148,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Ubuntu 发行版更新记录
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>就在刚刚运行着本网站的阿里云 ecs 经历了一次升级, 从 ubuntu 16.04 lts 升级到了 18.04 lts.
+升级过程平稳, 但升级后发现这个 php 做的网站变成了源码. 目测是 php 跪了, 于是尝试修 php.
+php5 仿佛已经不被支持, 于是换用 php7. 直接暴力 apt remove 再 install 就可以了, 配置会被保留.
+然后发现 mysqli not found. 解决方法是在 /etc/php/7.2/apache2/php.ini 里面将 extension=mysqli 一行给 uncomment 掉.
+然后就完事了.</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-01-21 23:13:52 +0000 UTC'>January 21, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to Ubuntu 发行版更新记录" href="/technical/3132d1/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>在若干不同机器上安装 Debian 并修了一些锅的记录
     </h2>
   </header>
@@ -316,23 +332,6 @@ BFS 和 DFS 是相对应的两种算法. 其区别在于对于新发现的可能
   </div>
   <footer class="entry-footer"><span title='2019-07-24 02:51:30 +0000 UTC'>July 24, 2019</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to Leetcode1129  颜色交替的最短路径" href="/oi/0529db/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Leetcode5129
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>先预处理一下, 把 &gt;8h 的变成 &#43;1, &lt;=8h 的变成 -1
-现在问题就变成了: 找最长的连续一段使其和 &gt;0
-使用前缀和数组, 要求 i~j 的和, 公式是 sum[j] - sum[i - 1].
-枚举左端点 i. 对于某个确定的 i, 要找以 i 为左端点的最长一段符合要求的区间, 即找满足条件 sum[j] &gt; sum[i - 1] 的最大的 j
-注意到 sum 数组的取值为 [-n, n], 故使用值域数组 values. value[k] 表示 sum[j] == k 的最大的 j. 该数组可以在求 sum 数组时一并求出.
-满足条件 sum[j] &gt; sum[i - 1] 的最大 j 即求 values[sum[i - 1] &#43; 1], values[sum[i - 1] &#43; 2], values[sum[i - 1] &#43; 3], …, values[正无穷] 中的最大值....</p>
-  </div>
-  <footer class="entry-footer"><span title='2019-07-16 12:16:25 +0000 UTC'>July 16, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to Leetcode5129" href="/oi/51d1b4/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -148,6 +148,18 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>bzoj3328 PYXFIB
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>上课讲的神题。构造公式。本来用HTML写了一堆公式的。然后天杀的网就断了要我重新开然后就没了。很想骂人。那就不写了呗，自行翻课件或者yy。</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-03-22 21:22:04 +0000 UTC'>March 22, 2015</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to bzoj3328 PYXFIB" href="/oi/dbimport_190/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>bzoj2700 聚会
     </h2>
   </header>
@@ -316,42 +328,6 @@ struct line { double k, b; inline double xCross(const line&amp; a) { return (a..
   </div>
   <footer class="entry-footer"><span title='2015-03-07 13:39:41 +0000 UTC'>March 7, 2015</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to BZOJ2402 陶陶的难题II" href="/oi/i11rimport_009/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>BZOJ1513 [POI2006]Tet-Tetris 3D
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>&lt;div class=&#34;post_brief&#34;&gt;&lt;p&gt; 这么水的题居然还要写题解。要不要说我写了半个下午&#43;半个晚上。&lt;/p&gt;  
-丧心病狂想写一发zkw去抢速度rank。然后发现zkw怎么支持区间修改查询TT。课件根本没讲懂。而且max怎么区间加。
- 
-想了很久终于想出了来了。然后交上去发现常数巨大比普通线段树还要慢TT。到头来想想如果我直接写普通线段树说不定十多分钟就能过，而且代码量还会小一些。因为那个是可以直接通用的，但是这个比较麻烦。
- 
-其实写这个就题解就是想记录一下我yy出来的zkw区间修改区间查询的方法。
- 
-这道题是区间查询最大值&#43;区间修改。如果是写一般的线段树，需要记录两个值a和v（至于为啥我用了这俩神奇的字母我也不知道），分别表示当前区间被完整覆盖的修改的最大值（又称lazy标记）和当前区间的最大值。然后所以zkw也要记这两个东西。
- 
-如果我们把zkw看作一棵树，那么每次修改和询问操作的时候都是对一些线段的a和v进行操作。（废话）
- 
-首先考虑修改。zkw经典的变为开区间取中间能处理a值的改变，但是不能处理v值的改变。因为v值改变的线段不一定会被当前区间包含。然后仔细考虑发现a值没有变但是v值变了的点只可能存在于两个端点到根的路径上。那就直接强行更新一发就好了啊。然后更新的区域就变成了一个有点像倒置漏斗的形状。
- 
-再考虑询问。a要覆盖当前区间，v要被当前区间覆盖。那不就是修改把a和v的做法反一下么。
- 
-然后好像也不是很麻烦的样子哈。
- 
-然后常数很大哈。
- 
-那还拿zkw做何用。
- 
-晕。
- 
-#include &lt;cstdio&gt; #include &lt;cctype&gt; #include &lt;cstring&gt; #include &lt;algorithm&gt; using namespace std;
-const int buf_len = 4567; char buf[buf_len], *bufb(buf), *bufe(buf &#43; 1); #define readBuf() { if (&#43;&#43; bufb == bufe) bufe = (bufb = buf) &#43; fread(buf, 1, sizeof(buf), stdin); } #define readInt(x) { register int s(0); do { readBuf(); } while (!...</p>
-  </div>
-  <footer class="entry-footer"><span title='2015-03-06 22:25:41 +0000 UTC'>March 6, 2015</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to BZOJ1513 [POI2006]Tet-Tetris 3D" href="/oi/i11rimport_010/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

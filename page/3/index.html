@@ -148,6 +148,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>如何使用 windows 笔记本的指纹解锁 linux
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>众所周知, laekov 在办公室有一台 nuc 装了 linux 主要用于工作, 另有一台笔记本用于其它工作. 作为一个锁屏强迫症, 每次 laekov 站起来去干啥的时候都会把两台电脑锁屏, 回来之后再分别解锁. 笔记本可以用指纹或者 iwndows hello, 而 nuc 就只能敲密码了. 不巧的是它还直接暴露在公网上, 于是密码设得比较长. 所以 laekov 希望用 windows 上的指纹来解 kde 的锁屏.
+然后发现直接使用命令 loginctl (un)lock-session &lt;id&gt; 就可以实现(解)锁 kde. 配合 ssh 和 autohotkey 就可以实现一键开关锁.
+但是这还是需要再额外按一次键. 然后发现 windows 有一个叫 task scheduler 的东西, 可以在锁屏和解锁的时候触发一些命令, 于是愉快地接入了 ssh 之后就可以方便地一次性解锁两台电脑辣!</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-07-18 15:41:58 +0000 UTC'>July 18, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to 如何使用 windows 笔记本的指纹解锁 linux" href="/technical/e59478/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>W 楼宿舍优化手记
     </h2>
   </header>
@@ -293,22 +307,6 @@ def drawCircumference(self, radius, center): ac.glBegin(1) nlines = max(4, int(1
   </div>
   <footer class="entry-footer"><span title='2021-12-20 22:14:48 +0000 UTC'>December 20, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to Assetto Corsa G值球只有半个 bug 修复" href="/technical/dadc0a/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>FasterMoE: 对大 MoE 模型训练的性能建模及优化
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>版权声明: 如需转载请先与 laekov 联系, 侵权必究. 序 Jiaao He 在 24 岁生日那一天收到邮件, 他在 ppopp 投稿的这篇文章被接收了. 这是他以一作身份投的第一篇 A 类会文章.
-laekov 当时脑子一热, 开了一个坑, 决定把这篇文章的主要内容用中文写出来, somehow 地促进中文学术. (虽然多半并没有什么帮助)
-在过去的小半年里他又经历了 artifact evaluation, camera ready, 制作 presentation slides 和录制视频 (很遗憾因为疫情没法去韩国开会了) 等等一系列事情, 对这个项目也有了更多的理解. 在 4 月的第一天终于把写文章时候的 prototype 变成了看起来还不错的代码, 并准备合并进 FastMoE. 正好写完这篇文章, 也当作是在 FastMoE 里使用 FasterMoE 的中文版文档了.
-这篇文章的 pdf 正文在 ACM DL 上可以找到. (有 open access, 在任何地方都可以下载, 并用于非商业目的) 开会的时候用的 slides 和视频链接 在这里.
-背景和简介 我假设看这篇文章的人已经知道什么是 MoE 模型了, 大规模的 MoE 模型现在有多重要 (也可能并不)....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-11-16 11:16:21 +0000 UTC'>November 16, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to FasterMoE: 对大 MoE 模型训练的性能建模及优化" href="/technical/181401/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

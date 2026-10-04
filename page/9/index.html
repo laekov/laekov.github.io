@@ -148,6 +148,24 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Logs on setting up Jupyter
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>最近在尝试搭 python 的数据分析的环境. 总结一下遇到的一些坑.
+用的是 14.04 这个有点老的 ubuntu.
+nginx &#43; jupyter jupyter 这个玩意的 web 写得不是很优美. 所以需要转发的地方蛮麻烦的.
+本来想直接在 uri 里搞一下. 然后发现过于难受就放弃了, 重新配置了一个域名转发.
+nginx 的 server 配置里需要加这么一段.
+server { location ~* /(api/kernels/[^/]&#43;/(channels|iopub|shell|stdin)|terminals/websocket)/? { proxy_set_header X-Real-IP $remote_addr; proxy_set_header Host $host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; # WebSocket support proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection $connection_upgrade; proxy_pass http://127.0.0.1:8888; } } 其中有个Upgrade是这么定义的.
+http { map $http_upgrade $connection_upgrade { default upgrade; &#39;&#39; close; } sendfile on; } google 了几个配置文件才弄出这么一个能用的....</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-11-14 13:06:54 +0000 UTC'>November 14, 2017</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to Logs on setting up Jupyter" href="/technical/7422c7/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Two key MST
     </h2>
   </header>
@@ -360,27 +378,6 @@ ps 八年来第一次没有在赛场上考noip. 今年题目描述好长好长�
   </div>
   <footer class="entry-footer"><span title='2016-11-19 13:51:22 +0000 UTC'>November 19, 2016</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to NOIP2016 DAY1 简要思路" href="/oi/5402cd/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>PD大作业
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>据说本学期程设的大作业是写个魔方.
-看到别人都开动了, laekov就有点方.
-所以laekov也开动了. 为了表现laekov很弱就随手记录一下好了.
-10.21 晚上9点左右开始写魔方类. 支持三轴整体转动和四种八向扭动. 其实是用两轴转动和一种扭动组合出来的. 然后发现写得不太对. debug到12点搞定.
-10.22 早上有运动会. 九点左右开始写层洗ai. 中午随便吃了点然后接着写. 全程没make. 大概一点左右写完开始debug. 两点惊闻有项目. 直到晚上六点半去听心理讲座接着debug. 晚上回寝室接着debug. 很多公式和判定都有小小的问题. 不过幸好函数都分开写了, 调试还算方便. 晚上九点左右能跑过随机了. core部分基本完结撒花. 顺手完善了一下document. 准备开始看qt.
-10.23 懒死了不想看qt. 晚上决定图形还是就用h5写吧.
-Historical Comments lyzy at 2016-10-26T20:22:21 膜Qt大神 至今不会release
-lyzy at 2016-10-26T20:27:43 我还是没有名字 I still have no name Todavia no tengo un nombre.
-lyzy at 2016-10-26T20:28:57 怎么办 What to do ¿Cómo？
-lyzy at 2016-10-26T20:29:21 太年轻 too young muy joven</p>
-  </div>
-  <footer class="entry-footer"><span title='2016-10-23 11:05:13 +0000 UTC'>October 23, 2016</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to PD大作业" href="/technical/bd3e8b/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

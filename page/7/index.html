@@ -148,6 +148,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Leetcode5129
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>先预处理一下, 把 &gt;8h 的变成 &#43;1, &lt;=8h 的变成 -1
+现在问题就变成了: 找最长的连续一段使其和 &gt;0
+使用前缀和数组, 要求 i~j 的和, 公式是 sum[j] - sum[i - 1].
+枚举左端点 i. 对于某个确定的 i, 要找以 i 为左端点的最长一段符合要求的区间, 即找满足条件 sum[j] &gt; sum[i - 1] 的最大的 j
+注意到 sum 数组的取值为 [-n, n], 故使用值域数组 values. value[k] 表示 sum[j] == k 的最大的 j. 该数组可以在求 sum 数组时一并求出.
+满足条件 sum[j] &gt; sum[i - 1] 的最大 j 即求 values[sum[i - 1] &#43; 1], values[sum[i - 1] &#43; 2], values[sum[i - 1] &#43; 3], …, values[正无穷] 中的最大值....</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-07-16 12:16:25 +0000 UTC'>July 16, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to Leetcode5129" href="/oi/51d1b4/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Leetcode5130
     </h2>
   </header>
@@ -324,29 +341,6 @@ ctarget 比较简单粗暴, 可以直接跳到用户上传的字符串里面, �
   </div>
   <footer class="entry-footer"><span title='2018-08-30 08:59:09 +0000 UTC'>August 30, 2018</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to 汇编 CSAPP Attack Lab" href="/technical/6788d3/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>DyNet 论文笔记
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>DYNET 1701.03980
-ABS cpp backend
-lw graph representation
-Problems easier debugging / maintaining large proj. express naturally Static vs Dynamic static pre-written model transfered to computation graph
-graph can be well optimized
-cannot deal with variable input size. NLP RNN
-cannot deal with variable input structure. Tree NN, Graph NN
-hard for complex flow-contronl logic (interface design)
-nontrivial interface.
-debug difficulty during execution
-dynamic do computation on the fly
-can be expensiveo flow control and variable sized inputs are in host language (python?...</p>
-  </div>
-  <footer class="entry-footer"><span title='2018-07-09 11:38:28 +0000 UTC'>July 9, 2018</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to DyNet 论文笔记" href="/technical/e51049/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

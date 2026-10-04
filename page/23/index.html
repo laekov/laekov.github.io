@@ -148,6 +148,24 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>BZOJ2157 旅游
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>&lt;div class=&#34;post_brief&#34;&gt;&lt;p&gt; 去找水题于是找到这么一道恶心的代码题。其实应该可以用函数指针来优化一下代码量，不过懒得了。虽然复制粘贴导致调试了老半天。&lt;/p&gt;  
+水水的链剖&#43;线段树。然后tag打一打就好了。
+ 
+最近是装备了高超的开坑技巧啊。
+ 
+#include &lt;cstdio&gt; #include &lt;cstring&gt; #include &lt;algorithm&gt; using namespace std;
+struct seg { int l, r, s, a, b, rv; seg *ls, *rs; inline void update() { if (l &#43; 1 &lt; r) { s = ls-&gt; s &#43; rs-&gt; s; a = min(ls-&gt; a, rs-&gt; a); b = max(ls-&gt; b, rs-&gt; b); if (rv) { s = -s; swap(a, b); a = -a; b = -b; } } else a = b = s; } inline void chgTag() { s = -s; swap(a, b); a = -a; b = -b; rv ^= 1; } inline void downTag() { if (rv) { rv = 0; if (l &#43; 1 &lt; r) { ls-&gt; chgTag(); rs-&gt; chgTag(); } } } }; struct edge { int t, v; edge *next; };...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-02-24 10:10:41 +0000 UTC'>February 24, 2015</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to BZOJ2157 旅游" href="/oi/i11rimport_037/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>BZOJ1845 [Cqoi2005] 三角形面积并
     </h2>
   </header>
@@ -322,27 +340,6 @@ struct node { int v, s, sz, w, rv; node ls, rs; inline void update() { sz = 1; s
   </div>
   <footer class="entry-footer"><span title='2015-02-06 23:10:41 +0000 UTC'>February 6, 2015</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to HDU5173 GTY&#39;s game II" href="/oi/i11rimport_054/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>BZOJ2642 Pku3968 Jungle Outpost
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>&lt;div class=&#34;post_brief&#34;&gt;&lt;p&gt; 看mhy写了好几天了啊。然后研究了一下，居然过得比他早。&lt;/p&gt;  
-首先敌人一定可以炸连续的一段。然后就是要看炸掉任意连续一段之后还有没有剩下的公共部分，既半平面交。
- 
-然后我yy出了一个半平面交的做法。找出一条基准直线，按方向顺时针方向排序。然后按照正常半平面交的方法根据栈顶两个元素和当前直线的位置关系判断是否需要退栈。然后当找到一条与基准直线的角度大于等于π的直线（直线是有向的，也可以说是成负角）且它把栈里退到只剩基准直线一条的时候，这些半平面没有交。否则这些半平面有交。
- 
-至于证明嘛，我也不会（挠头），毕竟是感受出来的。然后感觉这次代码写得比较漂亮，开心。
- 
-#include &lt;cstdio&gt; #include &lt;cmath&gt; #include &lt;cstring&gt; #include &lt;algorithm&gt; using namespace std;
-inline double sqr(double x) { return x * x; }
-struct point { double x, y; inline point() {} inline point(double x0, double y0) { x = x0, y = y0; } inline void read() { scanf(&#34;%lf%lf&#34;, &amp;x, &amp;y); } }; struct vect { double x, y; inline vect() {} inline vect(double x0, double y0) { x = x0, y = y0; } inline vect(point a, point b) { x = b....</p>
-  </div>
-  <footer class="entry-footer"><span title='2015-02-04 21:28:41 +0000 UTC'>February 4, 2015</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to BZOJ2642 Pku3968 Jungle Outpost" href="/oi/i11rimport_056/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -148,6 +148,26 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>BZOJ2815 [ZJOI2012]灾难
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>&lt;div class=&#34;post_brief&#34;&gt;&lt;p&gt; 灭绝树的模板题么。之前不知道这题，差点当原创题出出去了。&lt;/p&gt;  
+好像有不少人不知道这东西的样子？orz zhx。
+ 
+灭绝树只有一句口诀：一个东西的父亲是所有入边的另一端的点的LCA。
+#include &lt;cstdio&gt; #include &lt;cstring&gt; #include &lt;algorithm&gt; using namespace std;
+struct edge { int t; edge *next; };
+const int maxn = 70009; const int maxl = 19; const int maxe = 2000009;
+int n, ind[maxn], oud[maxn], tpo[maxn], ath[maxn][maxl], sz[maxn], d[maxn]; edge *ha[maxn], *hr[maxn], *ht[maxn];
+inline void addEdge(edge** head, int u, int v) { edge* ep = new edge; ep-&gt; t = v; ep-&gt; next = head[u]; head[u] = ep; }...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-01-27 20:45:41 +0000 UTC'>January 27, 2015</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to BZOJ2815 [ZJOI2012]灾难" href="/oi/i11rimport_074/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>BZOJ3251 树上三角形
     </h2>
   </header>
@@ -397,40 +417,6 @@ for (int j = 0; j &lt; (1 &lt;&lt; l); &#43;&#43; j) {...</p>
   </div>
   <footer class="entry-footer"><span title='2015-01-11 11:12:49 +0000 UTC'>January 11, 2015</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to BZOJ2393 Cirno的完美算数教室" href="/oi/lofterimport_004/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>BZOJ2813 奇妙的Fibonacci
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>的确比较奇妙。
-有一个奇妙的玩意是fib[gcd(i, j)] == gcd(fib[i], fib[j])。(fib[1] = fib[2] = 1)
-然后就比较可搞了。
-线性筛处理每个数的因子个数和因子和。开一点变量然后推一下就出来了。
-然后要注意fib[2]也可以整除所有奇数，包括1。表示在这上面坑了2次提交。
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-#define _l (long long int)
-const int maxn = 10000009;
-const int mod = 1000000007;
-int tp, pn[maxn], sa[maxn], sb[maxn], b[maxn], c[maxn];
-bool pr[maxn];
-void pre(int n) {
-memset(pr, 0, sizeof(pr));
-tp = 0;
-sa[1] = 1;
-sb[1] = 1;
-b[1] = 1;
-c[1] = 0;
-for (int i = 2; i &lt;= n; &#43;&#43; i) {
-if (!...</p>
-  </div>
-  <footer class="entry-footer"><span title='2015-01-08 20:46:03 +0000 UTC'>January 8, 2015</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to BZOJ2813 奇妙的Fibonacci" href="/oi/lofterimport_005/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

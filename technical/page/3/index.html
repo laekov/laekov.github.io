@@ -161,6 +161,21 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>在 ThinRouter 上开发网络（原理课）硬件测试仪软件部分的记录和一些经验
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>这个事情的 motivation 是被 harry 拉去上了一门叫 “高等计算机网络“ 的课, 而 harry 和 gyc 是本科生网络原理课的助教, 于是大作业的内容就是抱着 harry 的大腿给小朋友们做的硬件实验做一个测试平台. (harry: 你的老本行, 造 oj) 因为 laekov 的硬件水平四舍五入等于没有 (gg) 所以负责写前端.
+VUE &#43; ChartJS = gg laekov 多年没写过前端了, 没想到 angular 都已经 gg 了. 在 “尽量轻量化, 以后烧进 flash” 的指导思想 (还有 harry 的 push) 下选择了 vue.
+功能里有一个重要的需求是画一张同学们的路由器带宽-帧大小的曲线. 要是有 matplotlib 就好了, 然而既然是在写 web 就只能搞 js 的轮子了.
+然而 chartjs 需要给它一个生的 canvas DOM object. 但是 vue 的制造者似乎就是非常不喜欢开发者拿生的 DOM, 甚至把 document 对象都给屏蔽了. (?...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-12-22 10:48:37 +0000 UTC'>December 22, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to 在 ThinRouter 上开发网络（原理课）硬件测试仪软件部分的记录和一些经验" href="/technical/3b42dc/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>如何修改 htop 中一列的宽度
     </h2>
   </header>
@@ -319,26 +334,6 @@ SST 人脑挖矿 &#43; 无脑跑 SST 第一个部分是给定 cpu 核心数, l1/
   </div>
   <footer class="entry-footer"><span title='2019-11-23 06:05:51 +0000 UTC'>November 23, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to SCC@SC&#39;19 笔记" href="/technical/b1c6c4/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Raspberry Pi 折腾记录
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>获得一个生日礼物 raspberry pi 已将近一年, 然而因为它只有四个核所以被嫌弃地闲置了很久. 近期因为上了嵌入式的课, 所以又开始了一轮折腾. 把一些有趣的事记录一下.
-网络连接配置 老师说让我们先插上显示器配wifi, 之前我也是这么干的, 于是照做了.
-然后想拿回家用, 家里没显示器, wifi 密码输入错误, 失联 ovo
-后来想起直接给有线网口配个静态ip 就完事了. 和电脑直接对插就能访问 ovo.
-延迟测试 发了一个示波器很好玩, 然而只有 windows 的 pc 端驱动差评.
-GPIO 管脚控制居然是 python, 严重怀疑效率.
-实验本身倒是很简单. 接下来是给 kernel 打实时性补丁. (中断响应优先级? 时间步大小? 感觉 很有趣)
-视频流 网上看到一个例子是把 raspivid 的输出用 nc 接起来到 host 上用 mplayer / vlc 播放. 非常有趣就试了一下. cvlc 转发延迟略高. 直接 mplayer 放 h264 格式的视频非常流畅.
-Modius NN 计算棒 去 intel 上找到了 openvino 作为 myriad 计算棒的驱动....</p>
-  </div>
-  <footer class="entry-footer"><span title='2019-11-03 21:49:27 +0000 UTC'>November 3, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to Raspberry Pi 折腾记录" href="/technical/0ab785/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

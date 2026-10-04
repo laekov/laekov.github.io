@@ -148,6 +148,40 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>BZOJ2813 奇妙的Fibonacci
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>的确比较奇妙。
+有一个奇妙的玩意是fib[gcd(i, j)] == gcd(fib[i], fib[j])。(fib[1] = fib[2] = 1)
+然后就比较可搞了。
+线性筛处理每个数的因子个数和因子和。开一点变量然后推一下就出来了。
+然后要注意fib[2]也可以整除所有奇数，包括1。表示在这上面坑了2次提交。
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define _l (long long int)
+const int maxn = 10000009;
+const int mod = 1000000007;
+int tp, pn[maxn], sa[maxn], sb[maxn], b[maxn], c[maxn];
+bool pr[maxn];
+void pre(int n) {
+memset(pr, 0, sizeof(pr));
+tp = 0;
+sa[1] = 1;
+sb[1] = 1;
+b[1] = 1;
+c[1] = 0;
+for (int i = 2; i &lt;= n; &#43;&#43; i) {
+if (!...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-01-08 20:46:03 +0000 UTC'>January 8, 2015</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to BZOJ2813 奇妙的Fibonacci" href="/oi/lofterimport_005/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>BZOJ3522 [Poi2014]Hotel
     </h2>
   </header>
@@ -455,38 +489,6 @@ ep-&gt; t = v;...</p>
   </div>
   <footer class="entry-footer"><span title='2015-01-04 23:05:42 +0000 UTC'>January 4, 2015</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to BZOJ3829 [Poi2014]FarmCraft" href="/oi/lofterimport_014/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>BZOJ3831 [Poi2014]Little Bird
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>一血yeah yeah。
-第一眼觉得是比较麻烦的单调队列。
-然后发现转移的时候只会加1或者不加。
-那么取的时候只用取队首，队里首先fi单不降然后hi单减。那么一定没有方案比取队首差。
-#include &lt;cstdio&gt;
-#include &lt;cctype&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-int _d_; 
-#define readInt(_x_) { \
-int&amp; _s_ = (_x_ = 0); \
-while (!isdigit(_d_ = getchar())); \
-while (_s_ = _s_ * 10 &#43; _d_ - 48, isdigit(_d_ = getchar())); \
-}
-const int maxn = 1000009;
-int n, m, a[maxn], f[maxn], q[maxn];
-int getTrans(int l, int r) {
-int v0 = f[q[l]];
-while (l &lt; r) {
-int mid = (l &#43; r &#43; 1) &gt;&gt; 1;...</p>
-  </div>
-  <footer class="entry-footer"><span title='2015-01-04 13:37:14 +0000 UTC'>January 4, 2015</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to BZOJ3831 [Poi2014]Little Bird" href="/oi/lofterimport_015/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/random/</loc>
-    <lastmod>2026-07-19T13:00:00+00:00</lastmod>
+    <loc>/technical/domain-change/</loc>
+    <lastmod>2026-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/serving/</loc>
+    <lastmod>2026-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2026-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/technical/</loc>
+    <lastmod>2026-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
+    <lastmod>2026-10-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/random/</loc>
     <lastmod>2026-07-19T13:00:00+00:00</lastmod>
   </url><url>
     <loc>/random/to-ali-beian-review/</loc>
@@ -32,12 +44,6 @@
     <loc>/tags/research/</loc>
     <lastmod>2025-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/technical/</loc>
-    <lastmod>2025-08-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/random/20250818/</loc>
     <lastmod>2025-08-18T13:00:00+00:00</lastmod>
   </url><url>
@@ -48,9 +54,6 @@
     <lastmod>2024-07-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/technical/llm-serving-papers/</loc>
-    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/serving/</loc>
     <lastmod>2024-07-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/technical/fastmoe/</loc>

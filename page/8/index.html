@@ -148,6 +148,29 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>DyNet 论文笔记
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>DYNET 1701.03980
+ABS cpp backend
+lw graph representation
+Problems easier debugging / maintaining large proj. express naturally Static vs Dynamic static pre-written model transfered to computation graph
+graph can be well optimized
+cannot deal with variable input size. NLP RNN
+cannot deal with variable input structure. Tree NN, Graph NN
+hard for complex flow-contronl logic (interface design)
+nontrivial interface.
+debug difficulty during execution
+dynamic do computation on the fly
+can be expensiveo flow control and variable sized inputs are in host language (python?...</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-07-09 11:38:28 +0000 UTC'>July 9, 2018</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to DyNet 论文笔记" href="/technical/e51049/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>CaPiano 基于 FPGA 和摄像头的现实增强钢琴
     </h2>
   </header>
@@ -301,24 +324,6 @@ PA &lt;= 常数优化实习.
   </div>
   <footer class="entry-footer"><span title='2017-11-27 17:46:12 +0000 UTC'>November 27, 2017</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to Encode" href="/post/a338f5/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Logs on setting up Jupyter
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>最近在尝试搭 python 的数据分析的环境. 总结一下遇到的一些坑.
-用的是 14.04 这个有点老的 ubuntu.
-nginx &#43; jupyter jupyter 这个玩意的 web 写得不是很优美. 所以需要转发的地方蛮麻烦的.
-本来想直接在 uri 里搞一下. 然后发现过于难受就放弃了, 重新配置了一个域名转发.
-nginx 的 server 配置里需要加这么一段.
-server { location ~* /(api/kernels/[^/]&#43;/(channels|iopub|shell|stdin)|terminals/websocket)/? { proxy_set_header X-Real-IP $remote_addr; proxy_set_header Host $host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; # WebSocket support proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection $connection_upgrade; proxy_pass http://127.0.0.1:8888; } } 其中有个Upgrade是这么定义的.
-http { map $http_upgrade $connection_upgrade { default upgrade; &#39;&#39; close; } sendfile on; } google 了几个配置文件才弄出这么一个能用的....</p>
-  </div>
-  <footer class="entry-footer"><span title='2017-11-14 13:06:54 +0000 UTC'>November 14, 2017</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to Logs on setting up Jupyter" href="/technical/7422c7/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

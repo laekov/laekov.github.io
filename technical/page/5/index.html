@@ -161,6 +161,25 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>人智作业展示, 手把手教写拼音输入法
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>这篇讲义都是五笔打的
+laekov 2018.04.12
+Overview 作业要求 写一个拼音输入法, 一行一行地读拼音, 输出对应的汉语句子
+84: 两小时就能写完
+给出的数据 GBK编码的拼音-&gt;汉字对应表 新浪新闻一年的文章 评分 基础2字模型 扩展3字模型 四字, 双词, 三词… 需要写什么东西 拼音 2 汉字的 map 快速查找某个字/词词频的 map 估值函数和 infer 的算法 训练数据处理 最常用的16位编码是utf-8, 但是 Python 默认是 ASCII 的
+所以在程序第一行写上
+# -*- coding:utf-8 -*- Py 内部的 u&#39;一个字符串&#39; 可以用来表示 unicode 格式的字符串. 但是好像用不到.
+创建 pinyin to 汉字的 map 读 GBK 文件的最简单的方法 with open(&#39;somefile.txt&#39;, &#39;r&#39;, encoding = &#39;gbk&#39;) as f: for (lineno, content) in enumerate(f): dealWithALine(content) content 的格式 wo 窝 我 握 渥 (五笔党词穷了) python 自带分割 py2ch_map = {} def dealWithALine(c): d = c....</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-04-14 20:59:25 +0000 UTC'>April 14, 2018</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to 人智作业展示, 手把手教写拼音输入法" href="/technical/fdd853/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Lagrange插值, 三次样条插值和最小二乘拟合
     </h2>
   </header>
@@ -341,30 +360,6 @@ jquery里面一个element被clone之后要先加到document里才能再修饰它
   </div>
   <footer class="entry-footer"><span title='2016-02-28 10:41:28 +0000 UTC'>February 28, 2016</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to shiruku.点赞" href="/technical/07f888/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>shiruku.第三方登陆
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>听说造了登陆之后就没人愿意来评论了. 于是窝决定去造个第三方登陆.
-于是花了一晚上造出了oauth组件. (其实有sdk的啊摔)
-于是有了github登陆. 其实还有企鹅啥的. 然而企鹅就是强行降低网站的逼格这怎么行呢. (其实是企鹅强行要求sdk懒得搞了)
-oauth的登陆简单过程是酱的(有点三次握手的感觉)
-网站要去第三方申请一个application. 然后会得到client_id和client_secret. 然后把登陆的链接接到指定的页面去, 用get把client_id和泥要哪些数据传过去.
-网站会和用户交流人生(登陆). 然后会用get方式调用callback, 这个是在注册application的时候指定的. callback的get参数里有一种东西叫code. 这东西要用.
-用code来换access_token. 把code和client_id和client_secret一起当post参数传给第三方指定的第二个url. 如果没错会返回access_token, 这玩意是真正用来换数据的.
-用access_token再去第三方提供的第三个url来get用户的数据, 比如avatar_url什么的.
-那这和登陆有啥关系呢? 在第3步的时候如果泥得到了正确的access_token, 泥就可以认为用户正确登陆辣~
-然后就发生了一件鬼蓄的事情: 窝在去和github换数据的时候, 莫名其妙地就被403了. 大概就是酱(get为粟)
-function getData($url){ $opts = array(\&#39;http\&#39; =&gt; array( \&#39;method\&#39; =&gt; \&#39;GET\&#39; ) ); $context = stream_context_create($opts); $result = file_get_contents($url, false, $context); return $result; } 赶紧google了一下发现github会按照心情拒绝php发送的请求.
-于是窝假装窝不是php而是善良可爱的少年就好了啊2333.于是强行骗人.
-function getData($url){ $opts = array(\&#39;http\&#39; =&gt; array( \&#39;method\&#39; =&gt; \&#39;GET\&#39;, \&#34;header\&#34; =&gt; \&#34;User-Agent: Mozilla\&#34; ) ); $context = stream_context_create($opts); $result = file_get_contents($url, false, $context); return $result; } 假装窝叫Mozilla....</p>
-  </div>
-  <footer class="entry-footer"><span title='2016-02-21 17:32:39 +0000 UTC'>February 21, 2016</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to shiruku.第三方登陆" href="/technical/74c136/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

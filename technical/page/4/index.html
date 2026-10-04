@@ -161,6 +161,26 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Raspberry Pi 折腾记录
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>获得一个生日礼物 raspberry pi 已将近一年, 然而因为它只有四个核所以被嫌弃地闲置了很久. 近期因为上了嵌入式的课, 所以又开始了一轮折腾. 把一些有趣的事记录一下.
+网络连接配置 老师说让我们先插上显示器配wifi, 之前我也是这么干的, 于是照做了.
+然后想拿回家用, 家里没显示器, wifi 密码输入错误, 失联 ovo
+后来想起直接给有线网口配个静态ip 就完事了. 和电脑直接对插就能访问 ovo.
+延迟测试 发了一个示波器很好玩, 然而只有 windows 的 pc 端驱动差评.
+GPIO 管脚控制居然是 python, 严重怀疑效率.
+实验本身倒是很简单. 接下来是给 kernel 打实时性补丁. (中断响应优先级? 时间步大小? 感觉 很有趣)
+视频流 网上看到一个例子是把 raspivid 的输出用 nc 接起来到 host 上用 mplayer / vlc 播放. 非常有趣就试了一下. cvlc 转发延迟略高. 直接 mplayer 放 h264 格式的视频非常流畅.
+Modius NN 计算棒 去 intel 上找到了 openvino 作为 myriad 计算棒的驱动....</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-11-03 21:49:27 +0000 UTC'>November 3, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to Raspberry Pi 折腾记录" href="/technical/0ab785/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Graph Processing Systems
     </h2>
   </header>
@@ -343,25 +363,6 @@ def csv_reader(filename, batch_size = 1, is_test = False): with open(filename, &
   </div>
   <footer class="entry-footer"><span title='2018-04-22 17:59:13 +0000 UTC'>April 22, 2018</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to LIRS Plus" href="/technical/3e470a/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>人智作业展示, 手把手教写拼音输入法
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>这篇讲义都是五笔打的
-laekov 2018.04.12
-Overview 作业要求 写一个拼音输入法, 一行一行地读拼音, 输出对应的汉语句子
-84: 两小时就能写完
-给出的数据 GBK编码的拼音-&gt;汉字对应表 新浪新闻一年的文章 评分 基础2字模型 扩展3字模型 四字, 双词, 三词… 需要写什么东西 拼音 2 汉字的 map 快速查找某个字/词词频的 map 估值函数和 infer 的算法 训练数据处理 最常用的16位编码是utf-8, 但是 Python 默认是 ASCII 的
-所以在程序第一行写上
-# -*- coding:utf-8 -*- Py 内部的 u&#39;一个字符串&#39; 可以用来表示 unicode 格式的字符串. 但是好像用不到.
-创建 pinyin to 汉字的 map 读 GBK 文件的最简单的方法 with open(&#39;somefile.txt&#39;, &#39;r&#39;, encoding = &#39;gbk&#39;) as f: for (lineno, content) in enumerate(f): dealWithALine(content) content 的格式 wo 窝 我 握 渥 (五笔党词穷了) python 自带分割 py2ch_map = {} def dealWithALine(c): d = c....</p>
-  </div>
-  <footer class="entry-footer"><span title='2018-04-14 20:59:25 +0000 UTC'>April 14, 2018</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to 人智作业展示, 手把手教写拼音输入法" href="/technical/fdd853/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

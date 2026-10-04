@@ -148,6 +148,21 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>FastDecode: 一种很大胆的分布式 LLM 推理系统架构
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>这是一篇 arxiv 文章 的中文简要版本.
+摘要 这篇文章主要介绍了一种大语言模型的推理系统. 在自回归生成过程中, 序列中的元素 (token) 被挨个生成, 因此模型推理的序列长度 (sequence length) 为 1. 因此, 增大 batch size 对于 GPU 利用率的提升十分重要. 然而 KV-Cache 体积很大, 且与 batch size 成正比. 其大小阻止了 batch size 和 GPU 利用率的提升.
+相比 vLLM 提出的 page attention 技术, FastDecode 对于 CPU 的利用进行了更加大胆的尝试. 其不仅利用了 CPU 的内存容量, 还利用了其计算能力和多机扩展能力, 从而达到了提升 batch size, 提升 GPU 利用率的目的, 并实现了端到端的推理吞吐量提升.
+背景 在自回归生成过程中做 attention 时, 一个 token i 的特征向量 (feature vector) 会线性映射拆成 Qi, Ki, Vi 三个特征向量....</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-03-21 00:00:00 +0000 UTC'>March 21, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to FastDecode: 一种很大胆的分布式 LLM 推理系统架构" href="/technical/fastdecode/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>实验室新机器安装步骤检查单
     </h2>
   </header>
@@ -288,20 +303,6 @@ laekov 将目光瞄准了 tmux. 用 tmux new-session command 就可以在目标�
   </div>
   <footer class="entry-footer"><span title='2022-09-22 10:31:47 +0000 UTC'>September 22, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to 使用 gdb 调试多机程序的方法" href="/technical/70b9a2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>如何使用 windows 笔记本的指纹解锁 linux
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>众所周知, laekov 在办公室有一台 nuc 装了 linux 主要用于工作, 另有一台笔记本用于其它工作. 作为一个锁屏强迫症, 每次 laekov 站起来去干啥的时候都会把两台电脑锁屏, 回来之后再分别解锁. 笔记本可以用指纹或者 iwndows hello, 而 nuc 就只能敲密码了. 不巧的是它还直接暴露在公网上, 于是密码设得比较长. 所以 laekov 希望用 windows 上的指纹来解 kde 的锁屏.
-然后发现直接使用命令 loginctl (un)lock-session &lt;id&gt; 就可以实现(解)锁 kde. 配合 ssh 和 autohotkey 就可以实现一键开关锁.
-但是这还是需要再额外按一次键. 然后发现 windows 有一个叫 task scheduler 的东西, 可以在锁屏和解锁的时候触发一些命令, 于是愉快地接入了 ssh 之后就可以方便地一次性解锁两台电脑辣!</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-07-18 15:41:58 +0000 UTC'>July 18, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to 如何使用 windows 笔记本的指纹解锁 linux" href="/technical/e59478/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

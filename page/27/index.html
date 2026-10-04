@@ -148,6 +148,38 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>BZOJ3831 [Poi2014]Little Bird
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>一血yeah yeah。
+第一眼觉得是比较麻烦的单调队列。
+然后发现转移的时候只会加1或者不加。
+那么取的时候只用取队首，队里首先fi单不降然后hi单减。那么一定没有方案比取队首差。
+#include &lt;cstdio&gt;
+#include &lt;cctype&gt;
+#include &lt;cstring&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int _d_; 
+#define readInt(_x_) { \
+int&amp; _s_ = (_x_ = 0); \
+while (!isdigit(_d_ = getchar())); \
+while (_s_ = _s_ * 10 &#43; _d_ - 48, isdigit(_d_ = getchar())); \
+}
+const int maxn = 1000009;
+int n, m, a[maxn], f[maxn], q[maxn];
+int getTrans(int l, int r) {
+int v0 = f[q[l]];
+while (l &lt; r) {
+int mid = (l &#43; r &#43; 1) &gt;&gt; 1;...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-01-04 13:37:14 +0000 UTC'>January 4, 2015</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;laekov</footer>
+  <a class="entry-link" aria-label="post link to BZOJ3831 [Poi2014]Little Bird" href="/oi/lofterimport_015/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>BZOJ3401 [Usaco2009 Mar]Look Up 仰望
     </h2>
   </header>
@@ -456,39 +488,6 @@ if (*buf_s == &#39;-&#39;) \...</p>
   </div>
   <footer class="entry-footer"><span title='2014-12-26 21:32:24 +0000 UTC'>December 26, 2014</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;laekov</footer>
   <a class="entry-link" aria-label="post link to BZOJ3821 玄学" href="/oi/lofterimport_024/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>BZOJ2738 矩阵乘法
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>全局二分的经典题。
-最初试图用持久化线段树和分块，然后欢快地tle&#43;mle了。看到jason_yu和mhy过了，只能说自己的常数优化还不过关啊。
-第一次写这种二分。就是把所有东西扔进来快速排序，顺便考虑每个询问应该被扔到哪边。然后加树状数组来统计就好了。
-代码巨丑。
-#include &lt;cstdio&gt;
-#include &lt;cctype&gt;
-#include &lt;cstring&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-struct query {
-int x1, y1, x2, y2, k, n;
-};
-int _d_;
-#define readInt(_x_) { \
-int&amp; _s_ = _x_; \
-while (!isdigit(_d_ = getchar())); \
-_s_ = 0; \
-while ((_s_ = _s_ * 10 &#43; _d_ - 48), isdigit(_d_ = getchar())); \
-}
-const int maxn = 509;
-const int maxq = 310009;
-int n, m, t, maxa, a[maxn][maxn], b[maxn][maxn], ttm;...</p>
-  </div>
-  <footer class="entry-footer"><span title='2014-12-26 17:45:06 +0000 UTC'>December 26, 2014</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;laekov</footer>
-  <a class="entry-link" aria-label="post link to BZOJ2738 矩阵乘法" href="/oi/lofterimport_025/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
